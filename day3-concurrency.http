@@ -1,0 +1,29 @@
+### Async Task 1
+POST http://localhost:8080/tasks/async
+Content-Type: application/json
+
+{
+  "title": "async-task-1",
+  "status": "ASYNC"
+}
+
+### Async Task 2
+POST http://localhost:8080/tasks/async
+Content-Type: application/json
+
+{
+  "title": "async-task-2",
+  "status": "ASYNC"
+}
+
+### Async Task 3
+POST http://localhost:8080/tasks/async
+Content-Type: application/json
+
+{
+  "title": "async-task-3",
+  "status": "ASYNC"
+}
+
+### Fetch Tasks After Async Execution
+GET http://localhost:8080/tasks

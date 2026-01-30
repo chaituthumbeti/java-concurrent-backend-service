@@ -30,4 +30,10 @@ public class TaskController {
         return service.getAll();
     }
 
+    @PostMapping("/async")
+    public String createAsync(@RequestBody Task task){
+        service.createAsync(task);
+        return "Accepted";
+    }
+
 }

@@ -1,17 +1,8 @@
-### Health
-GET http://localhost:8080/health
-
-### Create Task
-POST http://localhost:8080/tasks
+### Create Task and Simulate Failure
+POST http://localhost:8080/tasks/fail
 Content-Type: application/json
 
 {
-  "title": "first task",
+  "title": "tx test",
   "status": "NEW"
 }
-
-### Get Tasks
-GET http://localhost:8080/tasks
-
-### Create Task and Simulate Failure
-POST /tasks/fail

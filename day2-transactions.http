@@ -1,0 +1,11 @@
+### Create Task With Forced Failure (Rollback Expected)
+POST http://localhost:8080/tasks/fail
+Content-Type: application/json
+
+{
+  "title": "rollback-task",
+  "status": "FAIL"
+}
+
+### Verify Tasks After Failure
+GET http://localhost:8080/tasks
