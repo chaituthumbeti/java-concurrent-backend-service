@@ -12,3 +12,6 @@ Content-Type: application/json
 
 ### Get Tasks
 GET http://localhost:8080/tasks
+
+### Create Task and Simulate Failure
+POST /tasks/fail

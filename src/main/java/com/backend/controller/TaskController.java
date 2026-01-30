@@ -10,17 +10,23 @@ import java.util.List;
 @RequestMapping("/tasks")
 public class TaskController {
     private final TaskService service;
+
     public TaskController(TaskService service) {
         this.service = service;
     }
 
     @PostMapping
-    public Task create(@RequestBody Task task){
+    public Task create(@RequestBody Task task) {
         return service.create(task);
     }
 
+    @PostMapping("/fail")
+    public Task createWithFailure(@RequestBody Task task) {
+        return service.createAndFail(task);
+    }
+
     @GetMapping
-    public List<Task> getAll(){
+    public List<Task> getAll() {
         return service.getAll();
     }
 

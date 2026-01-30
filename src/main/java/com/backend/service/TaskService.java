@@ -6,16 +6,31 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 @Service
-public class TaskService{
+public class TaskService {
     private final TaskRepository repository;
+
     public TaskService(TaskRepository repository) {
         this.repository = repository;
     }
-    public Task create(Task task){
+
+    @Transactional
+    public Task create(Task task) {
         return repository.save(task);
     }
-    public List<Task> getAll(){
+
+    @Transactional
+    public Task createAndFail(Task task) {
+        Task saved = repository.save(task);
+        if (true) {
+            throw new RuntimeException("Simulated failure");
+        }
+        return saved;
+    }
+
+    public List<Task> getAll() {
         return repository.findAll();
     }
 }
