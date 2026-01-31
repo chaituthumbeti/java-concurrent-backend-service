@@ -35,5 +35,8 @@ public class TaskController {
         service.createAsync(task);
         return "Accepted";
     }
-
+    @GetMapping("/processed-count")
+    public int getProcessedCount() {
+        return service.getProcessedCount();
+    }
 }

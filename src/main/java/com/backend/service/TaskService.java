@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -13,6 +14,7 @@ public class TaskService {
     private final TaskRepository repository;
     private final ExecutorService executor;
 
+    private final AtomicInteger processedCount = new AtomicInteger(0);
 
     public TaskService(TaskRepository repository,ExecutorService executor) {
         this.repository = repository;
@@ -35,7 +37,13 @@ public class TaskService {
 
     @Transactional
     public void createAsync(Task task){
-        executor.submit(()->create(task));
+        executor.submit(()-> {
+            repository.save(task);
+            processedCount.incrementAndGet();
+        });
+    }
+    public int getProcessedCount(){
+        return processedCount.get();
     }
     public List<Task> getAll() {
         return repository.findAll();
