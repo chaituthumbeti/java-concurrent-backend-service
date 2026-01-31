@@ -2,6 +2,7 @@ package com.backend.controller;
 
 import com.backend.model.Task;
 import com.backend.service.TaskService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class TaskController {
     }
 
     @PostMapping
-    public Task create(@RequestBody Task task) {
+    public Task create(@Valid @RequestBody Task task) {
         return service.create(task);
     }
 
