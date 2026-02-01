@@ -126,18 +126,8 @@ src/test/java/com/backend/
 | [TaskServiceConcurrencyTest.java](src/test/java/com/backend/service/TaskServiceConcurrencyTest.java) | Race condition testing with CountDownLatch |
 | [GlobalExceptionHandler.java](src/main/java/com/backend/exception/GlobalExceptionHandler.java) | @ControllerAdvice for centralized error handling |
 
-## Why This Project Stands Out
-
-- Solves real production problems - most student projects ignore concurrency
-- Shows deep technical understanding of framework internals, not just API usage
-- Production-ready code quality with proper error handling and validation
-- Comprehensive testing including difficult-to-test concurrent behavior
-- Performance awareness with database indexing, pagination, and connection pooling
-
 
 ---
 
 **Thumbeti Chaitanya Venkata Sai**  
 Computer Science Student
-
-This project demonstrates production-level Java backend development skills including concurrency management, transaction handling, and enterprise-grade testing practices.
