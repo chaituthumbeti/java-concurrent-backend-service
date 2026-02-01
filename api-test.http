@@ -1,8 +1,0 @@
-### Create Task and Simulate Failure
-POST http://localhost:8080/tasks/fail
-Content-Type: application/json
-
-{
-  "title": "tx test",
-  "status": "NEW"
-}
